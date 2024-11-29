@@ -1,0 +1,50 @@
+*{
+    font-family: sans-serif;
+}
+body{
+    background-color: palegreen;
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background-color: rgb(85, 124, 81);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 7px;
+    margin: 0 5%;
+}
+.form{
+    height: 400px;
+    width: 300px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.formelmt{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn{
+    margin-left: 33%;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    padding: 10px 5px;
+    background-color: lightgreen;
+}
+.formelmt label{
+    padding: 8px 5px;
+}
+.formelmt input{
+    border: none;
+    background-color: rgb(201, 241, 201);
+    border-radius: 4px;
+    padding: 8px 5px;
+}

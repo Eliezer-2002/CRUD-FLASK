@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD APP</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h3 style="color: brown; margin-left: 30px;">Learn Flask With MySQL</h3>
+    <h1 style="color: brown; margin-left: 30px;">Fruits Table</h1>
+    <p><a class="addFruit" href="{{url_for('addFruit')}}">ADD FRUIT</a></p>
+    <table>
+        <tr>
+            <th class="tborder">Name</th>
+            <th class="tborder">Color</th>
+            <th class="tborder">Is Sweet</th>
+            <th class="tborder">Quantity</th>
+            <th class="tborder">Edit</th>
+            <th class="tborder">Delete</th>
+        </tr>
+        {% for data in datas %}
+            <tr>
+                <td class="tborder">{{data.NAME}}</td>
+                <td class="tborder">{{data.COLOR}}</td>
+                {% if data.IS_SWEET == 0 %}
+                <td class="tborder">No</td>
+                {% elif data.IS_SWEET == 1 %}
+                <td class="tborder">Yes</td>
+                {% else %}
+                <td class="tborder">-</td>
+                {% endif %}
+                <td class="tborder">{{data.QUANTITY}}</td>
+                <td class="tborder"><a id="edit" href="{{url_for('editFruit',id=data.ID)}}">E</a></td>
+                <td class="tborder"><a id="delete" onclick="return confirm('Are you sure to delete')" href="{{url_for('deleteFruit',id=data.ID)}}">D</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
